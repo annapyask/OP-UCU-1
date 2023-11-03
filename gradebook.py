@@ -175,52 +175,8 @@ def get_list_of_students():
     pass
 
 
-"""gradebook"""
-def get_avg_score(student_dict: dict, activity: str) -> list[dict]:
-    """
-    Displays the average score of all students for one or more activities.
-
-    >>> get_avg_score({('Петренко', 'Василь', 'vasyl@ucu.edu.ua', 'BA'):\
-{'Лабораторні роботи': {'Лабораторна робота 2': 1, 'Лабораторна робота 3': 1,\
-'Лабораторна робота 4': None, 'Лабораторна робота 5': None,'Лабораторна робота 6': None,\
-'Лабораторна робота 7': None,'Лабораторна робота 8': None, 'Лабораторна робота 9': None,\
-'Лабораторна робота 10': None, 'Лабораторна робота 11': None,'Лабораторна робота 12': None},\
-'Проміжний іспит': {'Теоретичне завдання': None, 'Завдання на програмування': None},\
-'Тести по лекційним матеріалам': {'Тест 1': None, 'Тест 2': None, 'Тест 3': None,\
-'Тест 4': None, 'Тест 5': None, 'Тест 6': None, 'Тест 7': None, 'Тест 8': None,\
-'Тест 9': None, 'Тест 10': None, 'Тест 11': None},'Міні-проєкти': {'Міні-проєкт 1': None,\
-'Міні-проєкт 2': None, 'Міні-проєкт 3': None},'Фінальний іспит': {'Теоретичне завдання': None,\
-'Завдання на програмування 1': None,'Завдання на програмування 2': None,\
-'Завдання на програмування 3': None},'Додаткові бали': None}}, 'Лабораторні роботи')
-    [{'Лабораторні роботи': 2}]
-
-    >>> get_avg_score({('Петренко', 'Василь', 'vasyl@ucu.edu.ua', 'BA'):\
-{'Лабораторні роботи': {'Лабораторна робота 2': 1, 'Лабораторна робота 3': 1,\
-'Лабораторна робота 4': None, 'Лабораторна робота 5': None,'Лабораторна робота 6': None,\
-'Лабораторна робота 7': None,'Лабораторна робота 8': None, 'Лабораторна робота 9': None,\
-'Лабораторна робота 10': None, 'Лабораторна робота 11': None,'Лабораторна робота 12': None},\
-'Проміжний іспит': {'Теоретичне завдання': None, 'Завдання на програмування': None},\
-'Тести по лекційним матеріалам': {'Тест 1': None, 'Тест 2': None, 'Тест 3': None,\
-'Тест 4': None, 'Тест 5': None, 'Тест 6': None, 'Тест 7': None, 'Тест 8': None,\
-'Тест 9': None, 'Тест 10': None, 'Тест 11': None},'Міні-проєкти': {'Міні-проєкт 1': 5,\
-'Міні-проєкт 2': 5, 'Міні-проєкт 3': None},'Фінальний іспит': {'Теоретичне завдання': None,\
-'Завдання на програмування 1': None,'Завдання на програмування 2': None,\
-'Завдання на програмування 3': None},'Додаткові бали': None}}, 'Міні-проєкти')
-    [{'Міні-проєкти': 10}]
-
-    """
-    try:
-        lst = []
-        student_total_score = get_student_total_score(student_dict, activity)
-        for student in student_total_score:
-            valid_scores = [list(student.values())[0]]
-            lst.append(valid_scores)
-        student_count = len(student_total_score)
-        total_score = sum(inlist[0] for inlist in lst)
-        average_score = total_score / student_count
-        return [{activity: round(average_score)}]
-    except KeyError:
-        return f"Діяльність '{activity}' відсутня"
+def get_avg_score():
+    pass
 
 
 def get_score_by_letter():
